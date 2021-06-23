@@ -1,7 +1,7 @@
 version: '3'
 
 networks:
-    nginx-php56-mysql8-node:
+    nginx-php74-mysql8-node:
 
 services:
 
@@ -10,28 +10,28 @@ services:
         image: nginx:stable-alpine
         container_name: nginx-container
         ports:
-            - "80:80"
+            - "8080:80"
         volumes:
             - ./app:/var/www/project
             - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
         depends_on:
-            - php56-service
+            - php74-service
             - mysql8-service
         networks:
-            - nginx-php56-mysql8-node
+            - nginx-php74-mysql8-node
 
     # php
-    php56-service:
+    php74-service:
         build:
             context: .
             dockerfile: ./php/Dockerfile
-        container_name: php56-container
+        container_name: php74-container
         ports:
             - "9000:9000"
         volumes:
             - ./app:/var/www/project
         networks:
-            - nginx-php56-mysql8-node
+            - nginx-php74-mysql8-node
 
     # mysql
     mysql8-service:
@@ -48,7 +48,7 @@ services:
             MYSQL_ROOT_PASSWORD: secret
             MYSQL_PASSWORD: secret
         networks:
-            - nginx-php56-mysql8-node
+            - nginx-php74-mysql8-node
 
     # node
     node-service:
@@ -58,4 +58,4 @@ services:
             - ./app:/var/www/project
         working_dir: /var/www/project
         networks:
-            - nginx-php56-mysql8-node
+            - nginx-php74-mysql8-node
