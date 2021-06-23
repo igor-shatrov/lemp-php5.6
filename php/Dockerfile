@@ -4,8 +4,8 @@ FROM php:5.6-fpm
 #    && docker-php-ext-install intl opcache pdo pdo_mysql \
 #    && pecl install apcu \
 RUN docker-php-ext-enable apcu \
-    #&& docker-php-ext-configure zip \
-    #&& docker-php-ext-install zip
+    && docker-php-ext-configure zip \
+    && docker-php-ext-install zip
 
 WORKDIR /var/www/project
 
