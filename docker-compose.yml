@@ -21,7 +21,7 @@ services:
             - nginx-php-mysql8-node
 
     # php
-    php-service:
+    php-service1:
         build:
             context: .
             dockerfile: ./php/Dockerfile
@@ -50,12 +50,12 @@ services:
         networks:
             - nginx-php-mysql8-node
 
-    # node
-    node-service:
-        image: node:latest
-        container_name: node-container
-        volumes:
-            - ./app:/var/www/project
-        working_dir: /var/www/project
-        networks:
-            - nginx-php-mysql8-node
+    # # nodes
+    # node-service1:
+    #     image: node:latest
+    #     container_name: node-container
+    #     volumes:
+    #         - ./app:/var/www/project
+    #     working_dir: /var/www/project
+    #     networks:
+    #         - nginx-php-mysql8-node
