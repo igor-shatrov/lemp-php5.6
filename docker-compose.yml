@@ -25,7 +25,7 @@ services:
         build:
             context: .
             dockerfile: ./php/Dockerfile
-        container_name: wedsite1.com
+        container_name: wedsite1
         ports:
             - "9000:9000"
         volumes:
