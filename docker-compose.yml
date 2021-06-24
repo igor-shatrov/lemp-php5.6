@@ -37,7 +37,7 @@ services:
             - nginx-php-mysql8
 
      # php
-     php-service2:
+    php-service2:
         build:
             context: .
             dockerfile: ./php/Dockerfile
