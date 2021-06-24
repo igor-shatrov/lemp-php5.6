@@ -28,7 +28,7 @@ services:
         container_name: php-container
         ports:
             - "9000:9000"
-        volumes:
+        # volumes:
             # - ./app:/var/www/project
         networks:
             - nginx-php-mysql8-node
