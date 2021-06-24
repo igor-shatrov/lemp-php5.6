@@ -21,7 +21,7 @@ services:
             - nginx-php-mysql8-node
 
     # php
-    php-service1:
+    php-service:
         build:
             context: .
             dockerfile: ./php/Dockerfile
