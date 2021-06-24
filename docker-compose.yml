@@ -15,17 +15,17 @@ services:
             - ./app:/var/www/project
             - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
         depends_on:
-            - php-service
+            - php-service1
             - mysql8-service
         networks:
             - nginx-php-mysql8-node
 
     # php
-    php-service:
+    php-service1:
         build:
             context: .
             dockerfile: ./php/Dockerfile
-        container_name: php-container
+        container_name: wedsite1.com
         ports:
             - "9000:9000"
         volumes:
