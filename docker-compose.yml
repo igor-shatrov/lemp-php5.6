@@ -30,7 +30,7 @@ services:
             dockerfile: ./php/Dockerfile
         container_name: website1
         ports:
-            - "9000:9000"
+            - "9001:9000"
         volumes:
             - ./website1:/var/www/project1
         networks:
@@ -43,7 +43,7 @@ services:
             dockerfile: ./php/Dockerfile
         container_name: website2
         ports:
-            - "9000:9000"
+            - "9002:9000"
         volumes:
             - ./website2:/var/www/project2
         networks:
