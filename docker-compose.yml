@@ -29,6 +29,7 @@ services:
             context: .
             dockerfile: ./php/Dockerfile
         container_name: website1
+        privileged: true
         ports:
             - "9001:9000"
         volumes:
@@ -42,6 +43,7 @@ services:
             context: .
             dockerfile: ./php/Dockerfile
         container_name: website2
+        privileged: true
         ports:
             - "9002:9000"
         volumes:
