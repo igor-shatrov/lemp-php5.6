@@ -12,8 +12,8 @@ services:
         ports:
             - "80:80"
         volumes:
-            - /projects/php5-test-project1:/var/www/project1
-            - /projects/php5-test-project2:/var/www/project2
+            - ../projects/php5-test-project1:/var/www/project1
+            - ../projects/php5-test-project2:/var/www/project2
             - ./nginx/website1.conf:/etc/nginx/conf.d/website1.conf
             - ./nginx/website2.conf:/etc/nginx/conf.d/website2.conf
         depends_on:
@@ -33,7 +33,7 @@ services:
         ports:
             - "9001:9000"
         volumes:
-            - /projects/php5-test-project1:/var/www/project1
+            - ../projects/php5-test-project1:/var/www/project1
         networks:
             - nginx-php-mysql8
 
@@ -47,7 +47,7 @@ services:
         ports:
             - "9002:9000"
         volumes:
-            - /projects/php5-test-project2:/var/www/project2
+            - ../projects/php5-test-project2:/var/www/project2
         networks:
             - nginx-php-mysql8
 
