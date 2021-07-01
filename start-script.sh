@@ -8,7 +8,9 @@ do
 	git checkout scripts
 	for script in *.sh
 	do
+		git checkout main
 		sh $script
+		git checkout scripts
 	done
 	git checkout main
 	cd ..
