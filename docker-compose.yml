@@ -17,9 +17,9 @@ services:
             - ./nginx/website1.conf:/etc/nginx/conf.d/website1.conf
             - ./nginx/website2.conf:/etc/nginx/conf.d/website2.conf
         depends_on:
-            - php-service1
-            - php-service2
-            - mysql8-service
+            - php1
+            - php2
+            - mysql8
         networks:
             - nginx-php-mysql8
 
