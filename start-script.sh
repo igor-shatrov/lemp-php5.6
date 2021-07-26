@@ -5,14 +5,11 @@ for project in *
 do 
 	cd $project
 	git pull
-	git checkout scripts
+	cd scripts
 	for script in *.sh
 	do
-		git checkout main
 		sh $script
-		git checkout scripts
 	done
-	git checkout main
 	cd ..
 done
 
